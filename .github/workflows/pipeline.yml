@@ -24,7 +24,7 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run demo pipeline script
-        run: python demo_pipeline.py
+        run: python app.py
 
       - name: Show build output file
         run: cat demo_build_output.txt
