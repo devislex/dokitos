@@ -3,10 +3,7 @@ name: Demo Pipeline
 on:
   push:
     branches:
-      - develop
-  pull_request:
-    branches:
-      - develop
+      - Release/*
 
 jobs:
   build:
