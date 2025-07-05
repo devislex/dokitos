@@ -1,12 +1,9 @@
-name: Harold Pipeline
+name: prod Pipeline
 
 on:
   push:
     branches:
-      - develop
-  pull_request:
-    branches:
-      - develop
+      - main
 
 jobs:
   build:
