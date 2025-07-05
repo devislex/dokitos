@@ -14,7 +14,7 @@ def build_step():
 
 def main():
     build_step()
-    print("Demo pipeline steps completed successfully.")
+    print("App Deployed.")
 
 if __name__ == "__main__":
     main()

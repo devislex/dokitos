@@ -24,7 +24,24 @@ jobs:
         run: pip install -r requirements.txt
 
       - name: Run demo pipeline script
-        run: python app.py
+        run: python demo_pipeline.py
 
-      - name: Show build output file
-        run: cat demo_build_output.txt
+      - name: Upload build artifact
+        uses: actions/upload-artifact@v3
+        with:
+          name: demo_build_output
+          path: demo_build_output.txt
+
+  deploy:
+    needs: build
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Download build artifact
+        uses: actions/download-artifact@v3
+        with:
+          name: demo_build_output
+          path: ./deploy_files
+
+      - name: Show build output file contents
+        run: cat ./deploy_files/demo_build_output.txt
